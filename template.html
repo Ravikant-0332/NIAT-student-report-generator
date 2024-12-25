@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Report</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root{
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #FFC9B2;
+            --light-yellow: #FFF2A8;
+            --light-green: #8FE6A8;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: #475569;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol{
+            list-style-position: inside;
+        }
+
+        li{
+            line-height: 1.6;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 20px;
+            width: auto;
+            height: fit-content;
+            padding: 30px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .sub-container {
+            background-color: var(--primary-variant);
+        }
+
+        .item {
+            display: grid;
+            flex-wrap: wrap;
+            justify-items: stretch;
+            flex-direction: column;
+            grid-template-columns: auto auto;
+            column-gap: 10px;
+        }
+
+        .row {
+            display: flex;
+            align-items: stretch;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+            padding: 20px;
+
+        }
+
+        progress {
+            width: 100%;
+            height: 7px;
+            border: none;
+            background-color: var(--primary-variant);
+            border-radius: 10px;
+            appearance: none;
+        }
+
+        .progress-red::-webkit-progress-bar {
+            background-color: var(--light-red);
+            border-radius: 10px;
+        }
+
+        .progress-red::-webkit-progress-value {
+            background-color: var(--dark-red);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .progress-yellow::-webkit-progress-bar {
+            background-color: var(--light-yellow);
+            border-radius: 10px;
+        }
+
+        .progress-yellow::-webkit-progress-value {
+            background-color: var(--dark-yellow);
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .progress-green::-webkit-progress-bar {
+            background-color: var(--light-green);
+            border-radius: 10px;
+        }
+
+        .progress-green::-webkit-progress-value {
+            background-color: var(--dark-green);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .progress-bar {
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            rotate: 0 1 0 180deg;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar p {
+            rotate: 0 1 0 180deg;
+            text-align: center;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 10px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            flex: 1 0 25%
+        }
+
+        .circular-progress-container {
+            margin: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            row-gap: 20px;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        @media screen and (max-width:600px) {
+            .item {
+                grid-template-columns: auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">{{ name }}</h1>
+    </header>
+    <section class="container">
+        <div class="block-heading">Topin Assessment</div>
+        <div class="item">
+            <div class="row">
+                <div class="left">
+                    <div style="width: 100%;">
+                        <p style="margin-bottom: 5px;"><b>Aptitude</b></p>
+                        <p style="margin-bottom: 10px;">Marks Obtained: <b>{{ aptitude_marks }}/45</b></p>
+                        <p style="margin: 0;"><span>% Achieved: </span> <span style="color: var(--primary-color);"><b>{{ aptitude_percentage }}%</b></span></p>
+                        <progress value="{{ aptitude_percentage }}" max="100"></progress>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="left">
+                    <div style="width: 100%;">
+                        <p style="margin-bottom: 5px;"><b>Web Development</b></p>
+                        <p style="margin-bottom: 10px;">Marks Obtained: <b>{{ web_dev_marks }}/30</b></p>
+                        <p style="margin: 0;"><span>% Achieved: </span> <span style="color: var(--primary-color);"><b>{{ web_dev_percentage }}%</b></span></p>
+                        <progress value="{{ web_dev_percentage }}" max="100"></progress>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="left">
+                    <div style="width: 100%;">
+                        <p style="margin-bottom: 5px;"><b>Python Programming</b></p>
+                        <p style="margin-bottom: 10px;">Marks Obtained: <b>{{ python_programming_marks }}/30</b></p>
+                        <p style="margin: 0;"><span>% Achieved: </span> <span
+                                style="color: var(--primary-color);"><b>{{ python_programming_percentage }}%</b></span></p>
+                        <progress value="{{ python_programming_percentage }}" max="100"></progress>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="block-heading">Front End Assignment</div>
+        <div style="width: 100%;">
+            <p style="margin-bottom: 10px;">Score: <b>{{ assignment_score }}/100 </b></p>
+            <p style="margin: 0;"><span>Submission URL: </span> <span><a href="{{ submission_link }}" target="_blank"><b>{{ submission_url }}</b></a></span></p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="block-heading">Domain Expert Interview</div>
+        <div class="circular-progress-container">
+            <div class="progress-bar-container ">
+                <div class="progress-bar" id="cpb-1">
+                    <p>{{ self_introduction_score }}%</p>
+                </div>
+                <div class="center">Self Introduction</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-2">
+                    <p>{{ project_explanation_score }}%</p>
+                </div>
+                <div class="center">Project Explanation</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-3">
+                    <p>{{ communication_skill_score }}%</p>
+                </div>
+                <div class="center">Communication Skills</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-4">
+                    <p>{{ html_css_score }}%</p>
+                </div>
+                <div class="center">HTML & CSS</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-5">
+                    <p>{{ bootstrap_score }}%</p>
+                </div>
+                <div class="center">Bootstrap</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-6">
+                    <p>{{ python_theory_score }}%</p>
+                </div>
+                <div class="center">Python - Theory</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-7">
+                    <p>{{ python_coding_easy_score }}%</p>
+                </div>
+                <div class="center">Python Coding (EASY)</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-8">
+                    <p>{{ python_coding_medium_score }}%</p>
+                </div>
+                <div class="center">Python Coding (MEDIUM)</div>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="cpb-9">
+                    <p>{{ python_coding_hard_score }}%</p>
+                </div>
+                <div class="center">Python Coding (HARD)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="block-heading">Questions Asked</div>
+        <div class="container sub-container">
+            <div class="block-sub-heading">Web Development</div>
+            <ol>
+                {% for question in web_dev_questions %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="container sub-container">
+            <div class="block-sub-heading">Python Programming</div>
+            <ol>
+                {% for question in python_coding_questions %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const progressBars = document.querySelectorAll('progress');
+
+            function getColorClass(percentage) {
+                if (percentage < 50) {
+                    return 'progress-red';
+                } else if (percentage < 75) {
+                    return 'progress-yellow';
+                } else {
+                    return 'progress-green';
+                }
+            }
+            console.log(progressBars.length)
+            progressBars.forEach((progressBar) => {
+                const percentage = parseInt(progressBar.getAttribute('value'), 10);
+
+                const colorClass = getColorClass(percentage);
+
+                progressBar.classList.add(colorClass);
+            });
+
+            function updateRoundProgressFor(id){
+
+                const progressDiv = document.getElementById(id);
+                if (!progressDiv) {
+                    console.error("Element with id 'cpb-1' not found.");
+                    return;
+                }
+
+                const progressP = progressDiv.querySelector('p');
+                if (!progressP) {
+                    console.error("<p> tag inside '#cpb-1' not found.");
+                    return;
+                }
+
+                function getGradientColor(percentage) {
+                    if (percentage < 50) {
+                        return '#FF5733'; // Reddish
+                    } else if (percentage < 75) {
+                        return '#FFC300'; // Yellowish
+                    } else {
+                        return '#28A745'; // Green
+                    }
+                }
+
+                function getLightGradientColor(percentage) {
+                    if (percentage < 50) {
+                        return '#FFC9B2'; // Reddish
+                    } else if (percentage < 75) {
+                        return '#FFF2A8'; // Yellowish
+                    } else {
+                        return '#8FE6A8'; // Green
+                    }
+                }
+
+                function updateConicGradient() {
+                    const text = progressP.textContent || progressP.innerText;
+                    const percentageMatch = text.match(/(\d+)%/);
+
+                    if (!percentageMatch) {
+                        console.error("No valid percentage found in <p> tag.");
+                        return;
+                    }
+
+                    let percentage = parseInt(percentageMatch[1], 10);
+
+                    percentage = Math.max(0, Math.min(percentage, 100));
+
+                    const gradientColor = getGradientColor(percentage);
+                    const lightGradientColor = getLightGradientColor(percentage);
+
+                    progressDiv.style.background = `
+                        radial-gradient(closest-side, white 69%, transparent 70% 100%),
+                        conic-gradient(${gradientColor} ${percentage}%, ${lightGradientColor} 0)
+                    `;
+                }
+
+                updateConicGradient();
+            }
+
+            updateRoundProgressFor('cpb-1');
+            updateRoundProgressFor('cpb-2');
+            updateRoundProgressFor('cpb-3');
+            updateRoundProgressFor('cpb-4');
+            updateRoundProgressFor('cpb-5');
+            updateRoundProgressFor('cpb-6');
+            updateRoundProgressFor('cpb-7');
+            updateRoundProgressFor('cpb-8');
+            updateRoundProgressFor('cpb-9');
+
+        });
+    </script>
+
+</body>
+
+</html>

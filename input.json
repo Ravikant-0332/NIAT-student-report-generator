@@ -1,0 +1,114 @@
+{
+  "eb7a6f80-8140-4c5a-a558-71ff240b6187": {
+    "name": "Jayadhitya Ch",
+    "aptitude": {
+      "score": 14,
+      "percentage": 31.11111111
+    },
+    "web development": {
+      "score": 29,
+      "percentage": 96.66666667
+    },
+    "python programming": {
+      "score": 29,
+      "percentage": 96.66666667
+    },
+    "assignment": {
+      "score": 94,
+      "url": "nekmit21.niat.tech"
+    },
+    "interview ratings": [
+      3,
+      4,
+      4,
+      3,
+      4,
+      3,
+      "",
+      5,
+      4
+    ],
+    "asked questions": {
+      "web development": [
+        "How does responsiveness work in web design?",
+        "Can you explain how the Bootstrap grid system handles responsiveness?",
+        "Why is the Bootstrap grid system divided into 12 columns and not, for example, 14 or 16?",
+        "What is padding in CSS?",
+        "What is the difference between padding and margin in CSS?",
+        "On a scale from 1 to 10, how do you rate your HTML skills? Why?",
+        "What are the different ways to center a button element in HTML/CSS?",
+        "If a div element has no text and is styled with a background color, will the background color still be applied? Explain why or why not.",
+        "What is a viewport in web development?",
+        "How do you create hyperlinks in HTML? What are the key attributes of an anchor (<a>) tag?",
+        "If tasked with building a website, what key principles would you follow to create an effective web layout?"
+      ],
+      "python programming": [
+        "What is the difference between if-elif-else and nested if statements? When would you use each?",
+        "What are the three main approaches to solve logical problems?",
+        "What are the common steps you follow to debug a Python program?",
+        "Write a Python program to check whether a given number is less than, greater than, or equal to 5."
+      ]
+    }
+  },
+  "63fbdc05-cf02-4987-8c3c-e7beab7202a2": {
+    "name": "Sri Pavan Tej Balam",
+    "aptitude": {
+      "score": 43,
+      "percentage": 95.55555556
+    },
+    "web development": {
+      "score": 25,
+      "percentage": 83.33333333
+    },
+    "python programming": {
+      "score": 28,
+      "percentage": 93.33333333
+    },
+    "assignment": {
+      "score": 98,
+      "url": "internshipdec.niat.tech"
+    },
+    "interview ratings": [
+      5,
+      2,
+      4,
+      4,
+      5,
+      4,
+      5,
+      2,
+      0
+    ],
+    "asked questions": {
+      "web development": [
+        "How do you arrange elements on a webpage? Can you explain the technical process?",
+        "What is the specific Bootstrap component used for implementing a slider?",
+        "Why did you use Bootstrap version 4.x instead of the latest 5.x?",
+        "What are the key implementations you have done using Bootstrap?",
+        "How do you use maps in web development? Can you explain the process, for example, using an iframe?",
+        "Could you explain in detail how the Bootstrap grid system works?",
+        "What do you understand about the concept of a viewport in web development?",
+        "What is an anchor tag, and what attributes does it have?",
+        "How would you align a paragraph tag to the center of the page, both horizontally and vertically?",
+        "What are the different types of Bootstrap components you have worked with?",
+        "What is a carousel in Bootstrap, and when would you use it?",
+        "What are the different types of lists in HTML, and how are they used?",
+        "Is Bootstrap responsive by default, or do you need to take additional steps?",
+        "How do you create a grid layout in Bootstrap? What classes do you use, and how do you specify layouts for different screen sizes?"
+      ],
+      "python programming": [
+        "What are the key features of Python?",
+        "In which technologies or applications is Python commonly used? Can you provide real-world examples?",
+        "What do you understand about type conversion in Python?",
+        "What is the major difference between a for loop and a while loop?",
+        "How can you use a for loop when you don’t know the range in advance?",
+        "What are the different types of methods you have used in Python so far?",
+        "How do you add elements to a list in Python?",
+        "How do you delete elements from a list? Start with deleting the last element, and then explain how to delete a specific element.",
+        "What is the difference between break, continue, and pass in Python?",
+        "How can you update an element in a list in Python?",
+        "Write a Python program to find the maximum and minimum numbers in a list without using any inbuilt methods."
+      ]
+    }
+  }
+}
